@@ -4,7 +4,8 @@ const tl1 = gsap.timeline({
     scrollTrigger: {
         trigger: ".box1",
         start: "top top",
-        end: "bottom+=50% 50%",
+        end: "+=100%",
+        // end: "bottom+=50% 50%",
         scrub: 1,
         pin: true,
         // pinSpacing: false,
@@ -14,7 +15,7 @@ const tl1 = gsap.timeline({
 tl1.from('.box1 h2',{
     y: '100px',
     opacity: '0',
-    }
+    }, '+=0.1'
 )
 tl1.from('.box1 p',{
     y: '100px',
@@ -30,7 +31,7 @@ const tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: ".box2",
         start: "top top",
-        end: "bottom+=50% 50%",
+        end: "+=100%",
         scrub: 1,
         pin: true,
         // pinSpacing: false,
@@ -62,7 +63,8 @@ LottieScrollTrigger({
     target: "#animation",
     path: "data.json",
     speed: "fast",
-    scrub: 0 
+    scrub: 0 ,
+    image: '.image'
 });
 
 
@@ -75,7 +77,7 @@ function LottieScrollTrigger(vars) {
         // pin: true, 
         start: "top top", 
         // end: speeds[vars.speed] || "+=1000", 
-        end: "bottom+=200% 50%", 
+        end: "bottom top", 
         scrub: 1,
         markers: true
     };
