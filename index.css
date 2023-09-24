@@ -51,20 +51,20 @@
     flex-grow: 1;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-rows: 0.2fr 0.7fr;
     gap: 10%;
     width: 100%;
-    min-height: 50vh;
+    min-height: 100vh;
 }
 
 .box2 {
     flex-grow: 1;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-rows: 0.2fr 0.7fr;
     gap: 10%;
     width: 100%;
-    min-height: 50vh;
+    min-height: 100vh;
 }
 
 
@@ -91,7 +91,7 @@ p {
         grid-template-columns: auto;
         grid-template-rows: 0.5fr 0.5fr;
         gap: 10%;
-        min-height: 50vh;
+        min-height: 100vh;
     }
     
     .box2 {
@@ -100,7 +100,7 @@ p {
         grid-template-columns: auto;
         grid-template-rows: 0.5fr 0.5fr;
         gap: 10%;
-        min-height: 50vh;
+        min-height: 100vh;
     }
     
 
@@ -136,10 +136,10 @@ p {
     position: sticky;
     top: 0;
     display: grid;
+    align-items: flex-end;
     gap: 10%;
     width: 50%;
     height: 100vh;
-    padding-top: 25vh;
 }
 #animation {
     background-color: #fff;
