@@ -4,51 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            background-color: #cfc;
-            min-height: 50vh;
-            width: 300px;
-            /* padding-bottom: 100px; */
-        }
-        .box {
-            flex-grow: 1;
-            /* height: 100%; */
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: 0.7fr 0.3fr;
-            gap: 10%;
-            /* padding-bottom: 50px; */
-        }
-        h1 {
-            align-self: flex-end;
-            margin: 0;
-            /* display: grid;
-            place-items: center;
-            flex-grow: 1; */
-
-        }
-        p {
-            margin: 0;
-            /* flex-grow: 1;
-            padding-bottom: 50px; */
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
-<div class="container">
-    <div class="box">
+<h1>sample</h1>
+<div class="container red">
+    <div class="text filter">
 
-        <h1>123456</h1>
-        <p>123456</p>
+        <div class="box1 green">
+            <h2>123456</h2>
+            <p>123456</p>
+        </div>
+    
+        <div class="box2 blue">
+            <h2>987654</h2>
+            <p>987654</p>
+        </div>
+
+    </div>
+
+    <div class="image green">
+        <div class="sticky blue">
+
+            <img src="https://placehold.jp/480x360.png" alt="">
+
+        </div>
     </div>
 </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.8.1/lottie.min.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
