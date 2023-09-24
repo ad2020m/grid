@@ -8,7 +8,7 @@ const tl1 = gsap.timeline({
         scrub: 1,
         pin: true,
         // pinSpacing: false,
-        markers: true,
+        // markers: true,
     }
 });
 tl1.from('.box1 h2',{
@@ -34,7 +34,7 @@ const tl2 = gsap.timeline({
         scrub: 1,
         pin: true,
         // pinSpacing: false,
-        markers: true,
+        // markers: true,
     }
 });
 tl2.from('.box2 h2',{
@@ -52,3 +52,52 @@ tl2.fromTo('.box2',{
     opacity: '0',
 })
 
+
+
+
+
+
+// https://codepen.io/GreenSock/full/QWdjEbx
+LottieScrollTrigger({
+    target: "#animation",
+    path: "data.json",
+    speed: "fast",
+    scrub: 0 
+});
+
+
+function LottieScrollTrigger(vars) {
+    let playhead = {frame: 0};
+    let target = gsap.utils.toArray(vars.target)[0];
+    let speeds = {slow: "+=2000", medium: "+=1000", fast: "+=500"};
+    let st = {
+        trigger: target, 
+        // pin: true, 
+        start: "top top", 
+        // end: speeds[vars.speed] || "+=1000", 
+        end: "bottom+=200% 50%", 
+        scrub: 1,
+        markers: true
+    };
+    let animation = lottie.loadAnimation({
+        container: target,
+        renderer: vars.renderer || "svg",
+        loop: false,
+        autoplay: false,
+        path: vars.path
+    });
+    for (let p in vars) { 
+        st[p] = vars[p];
+    }
+    animation.addEventListener("DOMLoaded", function() {
+        gsap.to(playhead, {
+            frame: animation.totalFrames - 1,
+            ease: "none",
+            onUpdate: () => animation.goToAndStop(playhead.frame, true),
+            scrollTrigger: st
+        });
+        ScrollTrigger.sort();
+        ScrollTrigger.refresh();
+    });
+    return animation;
+}
